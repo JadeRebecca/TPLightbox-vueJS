@@ -2,15 +2,20 @@
 <template>
     <div class="lightbox" v-if="image">
         <img :src="image" width="50" height="50">
+        <lightbox-image :image="image"></lightbox-image>
     </div>
 </template>
 
 <script>
 
 import './LightboxDirective'
-import store from './LightboxStore'
+import store from './LightboxStore.js'
+import LightboxImage from './LightboxImage.vue'
 
 export default {
+    components: {
+        LightboxImage
+    },
     data(){
         return{
             state: store.state
